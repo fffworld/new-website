@@ -2,19 +2,28 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的第一个网页</title>
+    <title>我的动态网页</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Hello, GitHub! 🚀</h1>
+        <h1>Hello, <span id="typed"></span></h1>
         <p>这是我托管在 GitHub Pages 上的第一个网页。</p>
         <button onclick="greet()">点我试试</button>
     </div>
 
     <script>
+        // 2. 初始化打字机效果
+        var typed = new Typed('#typed', {
+            strings: ['GitHub! 🚀', 'World! 🌍', 'Future! ✨'],
+            typeSpeed: 100,      // 打字速度
+            backSpeed: 50,       // 退格速度
+            loop: true           // 循环播放
+        });
+
         function greet() {
-            alert('恭喜你！网页运行成功了！');
+            alert('动画加载成功！这就是 CDN 的威力。');
         }
     </script>
 </body>
